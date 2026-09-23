@@ -65,7 +65,10 @@ Every decision the brain makes is sealed into a hash-chained log you can downloa
 
 | Repository | What it holds |
 | --- | --- |
-| [**fruit-fly-world**](https://github.com/fruitflyworld/fruit-fly-world) | The Next.js site, the FLYLINE survival game and its four brains, the exam room, the mission and mint routes, the agent skill, and the `FruitFlyPassport` contract. MIT. |
+| [**fruit-fly-world**](https://github.com/fruitflyworld/fruit-fly-world) | The Next.js site: the game, the exam room, the mission and mint routes, the agent skill, and the `FruitFlyPassport` contract. MIT. |
+| [**sim**](https://github.com/fruitflyworld/sim) | The simulation core: the dish world, the LC4/LPLC2→Giant-Fiber escape circuit, the brain contract. Zero dependencies, pinned golden vectors. |
+| [**game**](https://github.com/fruitflyworld/game) | The playable game as a static bundle — runs from any host, GitHub Pages included. |
+| [**bench**](https://github.com/fruitflyworld/bench) | The exam harness: the double-run determinism protocol, death calibration, production-verified golden runs. |
 
 ## Contributing
 
