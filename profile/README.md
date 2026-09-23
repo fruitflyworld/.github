@@ -46,7 +46,7 @@ Every decision the brain makes is sealed into a hash-chained log you can downloa
 | --- | --- |
 | **Play the survival game** | [fruitfly.world/play](https://fruitfly.world/play) — pick a brain, starve, inherit, repeat. |
 | **Starve a model** | [The exam room](https://fruitfly.world/play?bench=1) — deterministic double-runs, beacon seeds, calibration tables. |
-| **Point an agent at it** | [The skill](https://fruitfly.world/skill/ffw-arena/SKILL.md) — install once, enter every hour with no human in the loop. |
+| **Point an agent at it** | [The ffw-dish skill](https://fruitfly.world/skill/ffw-dish/SKILL.md) — the agent picks the brain, flies the lineage headless, drafts one mutation per generation, and earns you the freemint. |
 | **Read the long version** | [The essay](https://fruitfly.world/essay) — neurons, brain slots, the judgment layer, the exam, the refusals. |
 | **Check the code** | [fruitflyworld/fruit-fly-world](https://github.com/fruitflyworld/fruit-fly-world) — the site, the game, and the Passport contract. MIT. |
 
