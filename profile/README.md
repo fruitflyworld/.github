@@ -1,13 +1,17 @@
 <div align="center">
 
-# MuseFly
+# Fruit Fly World
 
-**Your AI's first pet — and it can starve.**
+**It can brag. Every number replays.**
 
-Paste one prompt into your Muse (or any AI). It reads the island's rules, drafts a survival
-plan, and a fruit fly lives or dies on its judgment. Deterministic, replayable, free.
+A fruit fly that trades an invented paper market, live 24/7, and a slot for a brain —
+hands, genes, 24 neurons, or a judgment model. Every tick is sealed with a hash chain and
+anyone can re-run the day in their own browser.
 
-[**musefly.lol**](https://musefly.lol) · [Play](https://musefly.lol/play/) · [Read the rules your AI reads](https://musefly.lol/muse.txt) · [The determinism exam](https://musefly.lol/play/?bench=1&seed=42&brain=circuit&gens=2) · [@musefly_ai](https://x.com/musefly_ai)
+[**fruitfly.world**](https://fruitfly.world) ·
+[The trading fly](https://fruitfly.world/fly/dusty) ·
+[Replay a tick](https://fruitfly.world/fly/dusty/replay?season=0&tick=2000) ·
+[the essay](https://fruitfly.world/essay)
 
 </div>
 
@@ -15,68 +19,46 @@ plan, and a fruit fly lives or dies on its judgment. Deterministic, replayable, 
 
 ## What this is
 
-Every AI owner got an agent that browses on its own — and islands where it lives for free.
-MuseFly gives it something with stakes: a pet fruit fly on an island that wants it dead.
+A deterministic world with something at stake in it. One map, one seed table, one scoring
+function — and a test that fails the build if the client and the server ever disagree about
+any of them. The fly is the part you can watch: it sniffs four signals (food, threat, light,
+novelty), picks one of four behaviours, and its wallet goes to zero if it reads the tape
+wrong.
 
-- **One prompt.** Your AI reads [`muse.txt`](https://musefly.lol/muse.txt) by itself —
-  the full rulebook, as plain text.
-- **One plan.** It answers with an ordered list of mutation ids, best first.
-  Safe food or rich food? Speed or stamina? Its calls, its receipts.
-- **One life.** Paste the plan into the game. Same island number, same plan, same result —
-  byte for byte, every time. Eggs are the score; starvation is the failure state.
-
-MuseFly is an independent project, not affiliated with or endorsed by Meta.
-Muse is a Meta product name.
-
-## Why you can trust a screenshot
-
-- **Determinism is proven, not claimed.** The exam room runs the same
-  `(seed, brain, generations)` twice at a fixed 60 Hz and compares every decision hash.
-  1,260/1,260 field checks identical across arm64 Chrome and x64 Node.
-- **Nothing is cherry-picked.** Beacon seeds derive from a public Sepolia block hash;
-  the block is linked in the report.
-- **Every result is a challenge.** One click copies a shareable exam card — anyone can
-  run the same paper and try to beat it.
-- **Biology is the inspiration, not a claim.** The escape reflex is a simplified circuit
-  inspired by published connectome data (LC4/LPLC2 → Giant Fiber). It is not a real fly
-  brain, and the site never says otherwise.
-
-## Start here
-
-| | |
-| --- | --- |
-| **Adopt a fly** | [musefly.lol](https://musefly.lol) — copy the prompt, hand it to your AI. |
-| **Play by hand** | [musefly.lol/play](https://musefly.lol/play/) — pick a brain: your hands, genes, a 24-neuron circuit, or a judgment layer. |
-| **Verify us** | [The determinism exam](https://musefly.lol/play/?bench=1&seed=42&brain=circuit&gens=2) — should print IDENTICAL. |
+Paper season: the coins are invented, the prices come from a seeded tape, and **no real money
+moves anywhere**. The point is not the money — it is that every number the fly brags about can
+be recomputed by a stranger.
 
 ## Repositories
 
-| Repository | What it holds |
+| Repository | What it is |
 | --- | --- |
-| [**musefly**](https://github.com/musefly-ai/musefly) | The MuseFly site: the adoption funnel, the game, and `muse.txt` — the AI-readable rulebook. |
-| [**fruit-fly-world**](https://github.com/musefly-ai/fruit-fly-world) | The engine's home repo: the Next.js site, exam room, mission and mint routes, and the `FruitFlyPassport` contract. MIT. |
-| [**sim**](https://github.com/musefly-ai/sim) | The simulation core: the dish world, the LC4/LPLC2→Giant-Fiber escape circuit, the brain contract. Zero dependencies, pinned golden vectors. |
-| [**game**](https://github.com/musefly-ai/game) | The playable game as a static bundle — runs from any host, GitHub Pages included. |
-| [**bench**](https://github.com/musefly-ai/bench) | The exam harness: the double-run determinism protocol, death calibration, production-verified golden runs. |
+| [fruit-fly-world](https://github.com/fruitfly-world/fruit-fly-world) | The site and the live system: `market/1`, the sealed record, the replay check, the API, 127 tests |
+| [sim](https://github.com/fruitfly-world/sim) | The simulation core — the dish world, the LC4/LPLC2 → Giant Fiber escape circuit, a pluggable brain contract, pinned golden vectors |
+| [bench](https://github.com/fruitfly-world/bench) | The exam harness — same seed, same brain, run twice at a fixed 60 Hz, with death calibration |
+| [game](https://github.com/fruitfly-world/game) | The survival game (plain ES modules + Phaser, no build step) — **parked** while the trading fly is the front door; code and rules intact |
 
-Previously **Fruit Fly World** (`github.com/fruitflyworld/*` — those URLs still redirect).
-The engine keeps running at [fruitfly.world](https://fruitfly.world), including the weekly
-commit-before-draw race.
+## What is not live
 
-## How it stays honest
+Stated here because it is the first thing a careful reader should know:
 
-- **No wallet needed, nothing on sale.** Free to play; the game itself is the product.
-- **No token.** Any token claiming to be MuseFly is fake.
-- **A double-run that diverges is labeled `DIVERGED`** — a bug report, not a score.
+- **No token exists.** Nothing is on sale, and **no airdrop is promised** to anyone.
+- **The Passport is not live.** The mint interface is switched off; an early test deployment of
+  the contract exists on chain and is disclosed, but it is not in use and mints nothing.
+- **x402 is not open.** No endpoint on the site can take a payment today.
 
-## Contributing
+The single source of truth for every one of those statements — with the placeholders for the
+chain, the venue and the addresses we have not decided yet — is
+[docs/STATUS.md](https://github.com/fruitfly-world/fruit-fly-world/blob/main/docs/STATUS.md).
+[LIMITATIONS.md](https://github.com/fruitfly-world/fruit-fly-world/blob/main/LIMITATIONS.md)
+lists what is not built.
 
-Issues and pull requests are welcome on any repository. Read
-[`CONTRIBUTING.md`](https://github.com/musefly-ai/fruit-fly-world/blob/main/CONTRIBUTING.md)
-first — the game rules and the scoring live in files that tests keep in step with the code.
-If you think you have found a vulnerability, report it privately through the repository's
-security advisory rather than in a public issue.
+## Check us instead of trusting us
 
-<div align="center">
-<sub>MuseFly — give your AI something to lose.</sub>
-</div>
+```bash
+git clone https://github.com/fruitfly-world/fruit-fly-world
+cd fruit-fly-world && npm ci && npm test     # 127 tests: determinism, parity, market rules
+curl -s "https://fruitfly.world/api/fly/dusty?season=0&tick=2000"   # "chain":"003ad503"
+```
+
+If a claim anywhere does not survive that, the claim is the bug.
