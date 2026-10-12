@@ -1,64 +1,53 @@
 <div align="center">
-
-# Fruit Fly World
-
-**It can brag. Every number replays.**
-
-A fruit fly that trades an invented paper market, live 24/7, and a slot for a brain —
-hands, genes, 24 neurons, or a judgment model. Every tick is sealed with a hash chain and
-anyone can re-run the day in their own browser.
-
-[**fruitfly.world**](https://fruitfly.world) ·
-[The trading fly](https://fruitfly.world/fly/dusty) ·
-[Replay a tick](https://fruitfly.world/fly/dusty/replay?season=0&tick=2000) ·
-[the essay](https://fruitfly.world/essay)
-
+  <img src="https://raw.githubusercontent.com/fruitflyworld/fruit-fly-world/main/assets/logo.svg" width="96" alt="Fruit Fly World">
+  <h1>Fruit Fly World</h1>
+  <p><strong>It can brag. <em>Every number replays.</em></strong></p>
+  <p>A fruit fly that trades an invented paper market. Trading fees are its food.<br/>
+  When they dry up it starves, and its offspring take over the wallet.</p>
+  <p>
+    <a href="https://fruitfly.world/fly/dusty"><strong>Watch Dusty</strong></a> ·
+    <a href="https://fruitfly.world/fly/dusty/replay?season=0&tick=2000">Replay a tick yourself</a> ·
+    <a href="https://github.com/fruitflyworld/fruit-fly-world/blob/main/docs/STATUS.md">Status</a> ·
+    <a href="https://x.com/fruitfly_world">@fruitfly_world</a>
+  </p>
 </div>
 
 ---
 
-## What this is
+## What is live
 
-A deterministic world with something at stake in it. One map, one seed table, one scoring
-function — and a test that fails the build if the client and the server ever disagree about
-any of them. The fly is the part you can watch: it sniffs four signals (food, threat, light,
-novelty), picks one of four behaviours, and its wallet goes to zero if it reads the tape
-wrong.
+| | Status |
+| --- | --- |
+| **Dusty, the trading fly** | Live, paper season: invented coins, simulated wallet, no real money moves |
+| **Sealed record + browser replay** | Live: every tick is hashed and chained; your browser re-runs the day and compares |
+| **$FLY** | Not live. No token exists today |
+| **Genesis Passport** | Not live |
+| **The survival game** | Parked; the code stays open source |
 
-Paper season: the coins are invented, the prices come from a seeded tape, and **no real money
-moves anywhere**. The point is not the money — it is that every number the fly brags about can
-be recomputed by a stranger.
+[`docs/STATUS.md`](https://github.com/fruitflyworld/fruit-fly-world/blob/main/docs/STATUS.md) is the single source of truth. If anything here disagrees with it, STATUS.md is right.
+
+## Check it in ten seconds
+
+```bash
+curl -s "https://fruitfly.world/api/fly/dusty?season=0&tick=2000" | grep -o '"chain":"[0-9a-f]*"'
+# "chain":"003ad503"  <- the same value CI pins in the repository
+```
 
 ## Repositories
 
-| Repository | What it is |
+| Repository | What it holds |
 | --- | --- |
-| [fruit-fly-world](https://github.com/fruitfly-world/fruit-fly-world) | The site and the live system: `market/1`, the sealed record, the replay check, the API, 127 tests |
-| [sim](https://github.com/fruitfly-world/sim) | The simulation core — the dish world, the LC4/LPLC2 → Giant Fiber escape circuit, a pluggable brain contract, pinned golden vectors |
-| [bench](https://github.com/fruitfly-world/bench) | The exam harness — same seed, same brain, run twice at a fixed 60 Hz, with death calibration |
-| [game](https://github.com/fruitfly-world/game) | The survival game (plain ES modules + Phaser, no build step) — **parked** while the trading fly is the front door; code and rules intact |
+| [**fruit-fly-world**](https://github.com/fruitflyworld/fruit-fly-world) | The product: the site, the trading fly (`market/1`), the replay, the status page. |
+| [**sim**](https://github.com/fruitflyworld/sim) | The fly's body: the dish, a connectome-inspired escape circuit, a slot for a brain. Zero dependencies. |
+| [**bench**](https://github.com/fruitflyworld/bench) | The determinism exam: same seed, same brain, run twice, compared bit for bit. |
+| [**game**](https://github.com/fruitflyworld/game) | The original survival game. Parked. |
 
-## What is not live
+The biology is an inspiration, not a claim: the escape reflex is a simplified circuit based on published connectome data, not a real fly brain.
 
-Stated here because it is the first thing a careful reader should know:
+## Stay safe
 
-- **No token exists.** Nothing is on sale, and **no airdrop is promised** to anyone.
-- **The Passport is not live.** The mint interface is switched off; an early test deployment of
-  the contract exists on chain and is disclosed, but it is not in use and mints nothing.
-- **x402 is not open.** No endpoint on the site can take a payment today.
+- A contract address will only ever be published on **fruitfly.world** first. Anything else is fake.
+- We never DM first, never ask for keys or seed phrases, and never run private sales.
+- Found a vulnerability? Report it privately through the repository's security advisory, not in a public issue.
 
-The single source of truth for every one of those statements — with the placeholders for the
-chain, the venue and the addresses we have not decided yet — is
-[docs/STATUS.md](https://github.com/fruitfly-world/fruit-fly-world/blob/main/docs/STATUS.md).
-[LIMITATIONS.md](https://github.com/fruitfly-world/fruit-fly-world/blob/main/LIMITATIONS.md)
-lists what is not built.
-
-## Check us instead of trusting us
-
-```bash
-git clone https://github.com/fruitfly-world/fruit-fly-world
-cd fruit-fly-world && npm ci && npm test     # 127 tests: determinism, parity, market rules
-curl -s "https://fruitfly.world/api/fly/dusty?season=0&tick=2000"   # "chain":"003ad503"
-```
-
-If a claim anywhere does not survive that, the claim is the bug.
+<div align="center"><sub>Fruit Fly World · MIT licensed · every number replays</sub></div>
